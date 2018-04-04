@@ -1,0 +1,43 @@
+<h1>Mi Datos de coordinador</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Rut</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Representante Legal</th>
+      <th>Rut Representante Legal</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Colegio</th>
+      <th>Coordinador</th>
+      <th>Rol</th>
+      <th>Informacion de Emergencia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= image_tag @coordinator.image.thumb %></td>
+        <td><%= @coordinator.rut %></td>
+        <td><%= @coordinator.name %></td>
+        <td><%= @coordinator.email %></td>
+        <td><%= @coordinator.r_legal %></td>
+        <td><%= @coordinator.rut_legal %></td>
+        <td><%= @coordinator.address %></td>
+        <td><%= @coordinator.phone %></td>
+        <td><%= @coordinator.school %></td>
+        <td><%= @coordinator.coordinator %></td>
+        <td><%= @coordinator.role %></td>
+        <td><%= @coordinator.info_emergency %></td>
+        <td><%= link_to 'Show', coordinator_path(current_user) %></td>
+        <td><%= link_to 'Editar', edit_coordinator_path(current_user) %></td>
+      </tr>
+
+  </tbody>
+</table>
+
+<br>

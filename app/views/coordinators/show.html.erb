@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @coordinator.image.thumb %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @coordinator.rut %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coordinator.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @coordinator.email %>
+</p>
+
+<p>
+  <strong>Representante Legal:</strong>
+  <%= @coordinator.r_legal %>
+</p>
+
+<p>
+  <strong>Rut Representante Legal:</strong>
+  <%= @coordinator.rut_legal %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @coordinator.address %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @coordinator.phone %>
+</p>
+
+<p>
+  <strong>coordinador:</strong>
+  <%= @coordinator.school %>
+</p>
+
+<p>
+  <strong>Coordinador:</strong>
+  <%= @coordinator.coordinator %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @coordinator.role %>
+</p>
+
+<p>
+  <strong>Info_emergency:</strong>
+  <%= @coordinator.info_emergency %>
+</p>
+
+
+<%= link_to 'Edit', edit_coordinator_path(current_user)  %> |
+<%= link_to 'Back', coordinators_path(current_user) %>

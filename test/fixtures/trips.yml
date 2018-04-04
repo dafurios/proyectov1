@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: MyString
+  car: MyString
+  driver: MyString
+  start_longitude: 1.5
+  start_latitude: 1.5
+  end_longitude: 1.5
+  end_latitude: 1.5
+  start_time: 
+  end_time: 
+
+two:
+  student: MyString
+  car: MyString
+  driver: MyString
+  start_longitude: 1.5
+  start_latitude: 1.5
+  end_longitude: 1.5
+  end_latitude: 1.5
+  start_time: 
+  end_time: 

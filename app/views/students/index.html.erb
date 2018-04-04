@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'tutors/index' %>
+
+<h1>Mis Estudiantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Rut</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Surname</th>
+      <th>Address</th>
+      <th>Commune</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>School</th>
+      <th>Level</th>
+      <th>Course</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+    <tr>
+      <td><%= image_tag student.image.thumb %></td>
+      <td><%= student.rut %></td>
+      <td><%= student.name %></td>
+      <td><%= student.lastname %></td>
+      <td><%= student.surname %></td>
+      <td><%= student.address %></td>
+      <td><%= student.commune %></td>
+      <td><%= student.state %></td>
+      <td><%= student.city %></td>
+      <td><%= student.country %></td>
+      <td><%= student.phone %></td>
+      <td><%= student.school %></td>
+      <td><%= student.level %></td>
+      <td><%= student.course %></td>
+      <td><%= student.id %></td>
+      <td><%= link_to 'Show', tutor_student_path(current_user, student) %></td>
+      <td><%= link_to 'Edit', edit_tutor_student_path(current_user, student) %></td>
+      <td><%= link_to 'Destroy', tutor_student_path(current_user, student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_tutor_student_path %>
+
+
+<div class="container">
+
+  <div id="demo"> </div> <button onclick="getLocation()">Try It</button>
+
+  <script type="text/javascript">
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+
+  </script>
+
+  
+
+
+</div>

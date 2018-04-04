@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @student.image.thumb %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @student.rut %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @student.lastname %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @student.surname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+
+<p>
+  <strong>Commune:</strong>
+  <%= @student.commune %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @student.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @student.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @student.country %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @student.school %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @student.level %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @student.course %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @student.student_id %>
+</p>
+
+<%= link_to 'Edit', edit_tutor_student_path(@student) %> |
+<%= link_to 'Back', tutor_students_path(current_user) %>

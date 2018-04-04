@@ -1,0 +1,121 @@
+<%= form_with(model: [@enterprise, @driver], url: enterprise_drivers_path(current_user), local: true) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+      <ul>
+      <% driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :driver_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rut %>
+    <%= form.text_field :rut, id: :driver_rut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :driver_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contraseña %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracteres como minimo)</em>
+    <% end %><br />
+    <%= form.password_field :password, placeholder: "Ingresa Contraseña ...", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirmar_contraseña %><br />
+    <%= form.password_field :password_confirmation, placeholder: "Confirma Contraseña ...", autocomplete: "off" %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :chofer, 'Usuario Chofer' %>
+    <%= form.select :role, [['Chofer', 1]] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :driver_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :driver_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surname %>
+    <%= form.text_field :surname, id: :driver_surname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :driver_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :commune %>
+    <%= form.text_field :commune, id: :driver_commune %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :driver_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :driver_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :driver_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :driver_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school, id: :driver_school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work_child %>
+    <%= form.check_box :work_child, id: :driver_work_child %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_driver_license %>
+    <%= form.text_field :type_driver_license, id: :driver_type_driver_license %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info_emergency %>
+    <%= form.text_field :info_emergency, id: :driver_info_emergency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :id, id: :driver_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

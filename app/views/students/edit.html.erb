@@ -1,0 +1,87 @@
+<h1>Editing Student</h1>
+
+<%= form_with(model: [@tutor, @student], url:tutor_student_path(current_user, @student), local: true) do |form| %>
+
+
+<div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image, id: :student_image %>
+</div>
+
+<div class="field">
+  <%= form.label :rut %>
+  <%= form.text_field :rut, id: :student_rut %>
+</div>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name, id: :student_name %>
+</div>
+
+<div class="field">
+  <%= form.label :lastname %>
+  <%= form.text_field :lastname, id: :student_lastname %>
+</div>
+
+<div class="field">
+  <%= form.label :surname %>
+  <%= form.text_field :surname, id: :student_surname %>
+</div>
+
+<div class="field">
+  <%= form.label :address %>
+  <%= form.text_field :address, id: :student_address %>
+</div>
+
+<div class="field">
+  <%= form.label :commune %>
+  <%= form.select :commune, @commune.pluck(:name, :id) %>
+</div>
+
+<div class="field">
+  <%= form.label :state %>
+  <%= form.text_field :state, id: :student_state %>
+</div>
+
+<div class="field">
+  <%= form.label :city %>
+  <%= form.text_field :city, id: :student_city %>
+</div>
+
+<div class="field">
+  <%= form.label :country %>
+  <%= form.text_field :country, id: :student_country %>
+</div>
+
+<div class="field">
+  <%= form.label :phone %>
+  <%= form.text_field :phone, id: :student_phone %>
+</div>
+
+<div class="field">
+  <%= form.label :school %>
+  <%= form.text_field :school, id: :student_school %>
+</div>
+
+<div class="field">
+  <%= form.label :level %>
+  <%= form.text_field :level, id: :student_level %>
+</div>
+
+<div class="field">
+  <%= form.label :course %>
+  <%= form.text_field :course, id: :student_course %>
+</div>
+
+<div class="field">
+  <%= form.label :student_id %>
+  <%= form.text_field :student_id, id: :student_student_id %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', tutor_student_path(@student) %> |
+<%= link_to 'Back', tutor_students_path(current_user) %>

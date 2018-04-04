@@ -1,0 +1,34 @@
+require 'test_helper'
+
+class CarsControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    get cars_index_url
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get cars_edit_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get cars_new_url
+    assert_response :success
+  end
+
+  test "should get show" do
+    get cars_show_url
+    assert_response :success
+  end
+
+  test "should get _form" do
+    get cars__form_url
+    assert_response :success
+  end
+
+  test "should get _index" do
+    get cars__index_url
+    assert_response :success
+  end
+
+end

@@ -1,0 +1,47 @@
+<h2>Crear cuenta</h2>
+<br>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+
+<div class="field">
+  <%= f.label :Nombre %><br />
+  <%= f.text_field :name, placeholder: "Ingresa tu nombre aquí ...", autofocus: true, autocomplete: "name" %>
+</div>
+<br>
+
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, placeholder: "Ingresa tu@correo ...", autocomplete: "email" %>
+</div>
+
+<div class="field">
+  <%= f.label :contraseña %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> caracteres como minimo)</em>
+  <% end %><br />
+  <%= f.password_field :password, placeholder: "Ingresa Tu Contraseña ...", autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :confirmar_contraseña %><br />
+  <%= f.password_field :password_confirmation, placeholder: "Confirma Contraseña ...", autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :tipo_usuario, 'Selecciona tu tipo de usuario' %>
+  <%= f.select :role, User.roles.keys, prompt: "Escoger" %>
+
+  <!-- [['Tutor', 1],['Empresa', 2],['coordinador', 3]] -->
+</div>
+<br>
+
+<div class="actions">
+  <%= f.submit "Sign up" %>
+</div>
+<% end %>
+
+<br><br>
+
+<%= render "devise/shared/links" %>

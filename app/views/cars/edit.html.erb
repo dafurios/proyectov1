@@ -1,0 +1,57 @@
+<h1>Editing Car</h1>
+
+<%= form_with(model: [@enterprise, @car], url: enterprise_car_path(current_user), local: true) do |form| %>
+
+
+  <div class="field">
+    <%= form.label :type_car %>
+    <%= form.text_field :type_car, id: :car_type_car %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand, id: :car_brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, id: :car_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year, id: :car_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :car_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plate %>
+    <%= form.text_field :plate, id: :car_plate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tech_rev %>
+    <%= form.check_box :tech_rev, id: :car_tech_rev %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nation_registry %>
+    <%= form.check_box :nation_registry, id: :car_nation_registry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :car_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', enterprise_car_path(@car) %> |
+<%= link_to 'Back', enterprise_drivers_path(current_user) %>

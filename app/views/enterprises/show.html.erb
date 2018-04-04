@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @enterprise.image.thumb %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @enterprise.rut %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @enterprise.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @enterprise.email %>
+</p>
+
+<p>
+  <strong>Representante Legal:</strong>
+  <%= @enterprise.r_legal %>
+</p>
+
+<p>
+  <strong>Rut Representante Legal:</strong>
+  <%= @enterprise.rut_legal %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @enterprise.address %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @enterprise.phone %>
+</p>
+
+<p>
+  <strong>coordinador:</strong>
+  <%= @enterprise.school %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @enterprise.role %>
+</p>
+
+<p>
+  <strong>Info_emergency:</strong>
+  <%= @enterprise.info_emergency %>
+</p>
+
+
+<%= link_to 'Edit', edit_enterprise_path(current_user)  %> |
+<%= link_to 'Back', enterprise_drivers_path(current_user) %>

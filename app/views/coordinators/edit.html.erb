@@ -1,0 +1,89 @@
+
+<h1>Editing coordinator</h1>
+
+<%= form_with(model: [@coordinator],url: coordinator_path(current_user), local: true) do |form| %>
+<% if @coordinator.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(coordinator.errors.count, "error") %> prohibited this coordinator from being saved:</h2>
+
+    <ul>
+    <% coordinator.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :coordinator_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rut %>
+    <%= form.text_field :rut, id: :coordinator_rut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :coordinator_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :coordinator_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_legal %>
+    <%= form.text_field :r_legal, id: :coordinator_r_legal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rut_legal %>
+    <%= form.text_field :rut_legal, id: :coordinator_rut_legal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :coordinator_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :coordinator_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school, id: :coordinator_school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coordinator %>
+    <%= form.text_field :coordinator, id: :coordinator_coordinator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.text_field :role, id: :coordinator_role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info_emergency %>
+    <%= form.text_field :info_emergency, id: :coordinator_info_emergency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coordinator_id %>
+    <%= form.text_field :id, id: :coordinator_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', coordinators_path(current_user) %>

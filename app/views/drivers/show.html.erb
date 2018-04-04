@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @driver.image.thumb %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @driver.rut %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @driver.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @driver.password %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @driver.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @driver.lastname %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @driver.surname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @driver.address %>
+</p>
+
+<p>
+  <strong>Commune:</strong>
+  <%= @driver.commune %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @driver.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @driver.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @driver.country %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @driver.phone %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @driver.school %>
+</p>
+
+<p>
+  <strong>Work_child:</strong>
+  <%= @driver.work_child %>
+</p>
+
+<p>
+  <strong>Type_driver_license:</strong>
+  <%= @driver.type_driver_license %>
+</p>
+
+<p>
+  <strong>Info_emergency:</strong>
+  <%= @driver.info_emergency %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @driver.role %>
+</p>
+
+<% if current_user.chofer? %>
+<p>Panel de Chofer</p>
+
+  <% else %>
+  <%= link_to 'Edit', edit_enterprise_driver_path(@driver) %> |
+  <%= link_to 'Back', enterprise_drivers_path(current_user) %>
+<% end %>

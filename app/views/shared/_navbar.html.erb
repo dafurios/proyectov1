@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light pt-4">
+  <a class="navbar-brand" href="<%= root_path %>">Mi RapuApp</a>
+  <% if user_signed_in? %>
+
+  <% if current_user.tutor? %>
+  <a class="navbar-brand" href="<%= tutor_students_path(current_user) %>">Panel de Control ::: Tutor</a>
+
+  <% elsif current_user.chofer? %>
+   <a class="navbar-brand" href="<%= enterprise_driver_path(current_user) %>">Panel de Control ::: Chofer</a>
+
+  <% elsif current_user.empresa? %>
+   <a class="navbar-brand" href="<%= enterprise_drivers_path(current_user) %>">Panel de Control ::: Empresa</a>
+
+  <% elsif current_user.coordinador? %>
+   <a class="navbar-brand" href="<%= coordinators_path %>">Panel de Control ::: coordinador</a>
+
+  <% elsif current_user.alumno? %>
+   <a class="navbar-brand" href="<%= tutors_path %>">Panel de Control ::: Alumno</a>
+
+
+  <% end %>
+  <% end %>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <% if user_signed_in? %>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <strong><%= link_to current_user.email, '#', class: 'nav-link' %></strong>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %>
+
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to 'Iniciar Sesión', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Registrarse', new_user_registration_path, class: 'nav-link' %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+<p id="notice"><%= notice %></p>
