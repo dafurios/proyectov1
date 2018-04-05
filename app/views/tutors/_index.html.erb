@@ -9,6 +9,7 @@
       <th>Apellido Paterno</th>
       <th>Apellido Materno</th>
       <th>Dirección</th>
+      <th>Comuna</th>
       <th>Teléfono</th>
       <th>coordinador</th>
       <th>Nivel</th>
@@ -26,6 +27,12 @@
         <td><%= @tutor.lastname %></td>
         <td><%= @tutor.surname %></td>
         <td><%= @tutor.address %></td>
+        <% if @tutor.commune == nil %>
+          <td> Ingresa Comuna</td>
+          <% else %>
+          <td><%= @tutor.commune.name %></td>
+        <% end %>
+
         <td><%= @tutor.phone %></td>
         <td><%= @tutor.school %></td>
         <td><%= @tutor.level %></td>

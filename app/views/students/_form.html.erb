@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :commune %>
-    <%= form.text_field :commune, id: :student_commune %>
+    <%= form.select :commune_id, @commune.pluck(:name, :id) %>
   </div>
 
   <div class="field">

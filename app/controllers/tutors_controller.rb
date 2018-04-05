@@ -12,6 +12,7 @@ class TutorsController < ApplicationController
   end
 
   def edit
+    @commune = Commune.all
   end
 
   def update
@@ -36,7 +37,7 @@ class TutorsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tutor_params
-    params.require(:tutor).permit(:image, :rut, :name, :lastname, :surname, :address, :commune, :state, :city, :country, :phone, :school, :level, :course, :user_id)
+    params.require(:tutor).permit(:image, :rut, :name, :lastname, :surname, :address, :commune_id, :state, :city, :country, :phone, :school, :level, :course, :user_id)
   end
 
 

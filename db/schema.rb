@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404183101) do
+ActiveRecord::Schema.define(version: 20180405000725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 20180404183101) do
     t.string "lastname"
     t.string "surname"
     t.string "address"
-    t.string "commune"
     t.string "state"
     t.string "city"
     t.string "country"
@@ -119,6 +118,8 @@ ActiveRecord::Schema.define(version: 20180404183101) do
     t.bigint "school_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["commune_id"], name: "index_students_on_commune_id"
     t.index ["school_id"], name: "index_students_on_school_id"
     t.index ["user_id"], name: "index_students_on_user_id"
@@ -167,7 +168,6 @@ ActiveRecord::Schema.define(version: 20180404183101) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.string "commune"
     t.string "state"
     t.string "city"
     t.string "country"

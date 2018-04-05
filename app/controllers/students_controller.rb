@@ -22,12 +22,12 @@ class StudentsController < ApplicationController
   def new
     @tutor = current_user
     @student = Student.new
-    # @commune = Commune.all
+    @commune = Commune.all
   end
 
   # GET /students/1/edit
   def edit
-    # @commune = Commune.all
+    @commune = Commune.all
   end
 
   # POST /students
@@ -79,6 +79,8 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
   # Use callbacks to share common setup or constraints between actions.

@@ -35,7 +35,7 @@
 
 <div class="field">
   <%= form.label :commune %>
-  <%= form.select :commune, @commune.pluck(:name, :id) %>
+  <%= form.select :commune_id, @commune.pluck(:name, :id) %>
 </div>
 
 <div class="field">
@@ -71,11 +71,6 @@
 <div class="field">
   <%= form.label :course %>
   <%= form.text_field :course, id: :student_course %>
-</div>
-
-<div class="field">
-  <%= form.label :student_id %>
-  <%= form.text_field :student_id, id: :student_student_id %>
 </div>
 
   <div class="actions">

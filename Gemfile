@@ -41,10 +41,16 @@ gem 'mini_magick'
 
 
 
-
 # geolocalization
 
 gem 'geocoder'
+
+# goolgemaps
+
+gem 'gmaps4rails'
+
+#
+gem 'underscore-rails'
 
 
 # Use CoffeeScript for .coffee assets and views

@@ -7,7 +7,6 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :lastname
       t.string :surname
       t.string :address
-      t.string :commune
       t.string :state
       t.string :city
       t.string :country

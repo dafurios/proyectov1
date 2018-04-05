@@ -46,6 +46,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :commune %>
+    <%= form.select :commune_id, @commune.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone, id: :tutor_phone %>
   </div>
