@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405000725) do
+ActiveRecord::Schema.define(version: 20180405153454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -185,6 +185,8 @@ ActiveRecord::Schema.define(version: 20180405000725) do
     t.bigint "driver_id"
     t.bigint "school_id"
     t.bigint "commune_id"
+    t.string "provider"
+    t.string "uid"
     t.index ["commune_id"], name: "index_users_on_commune_id"
     t.index ["coordinator_id"], name: "index_users_on_coordinator_id"
     t.index ["driver_id"], name: "index_users_on_driver_id"

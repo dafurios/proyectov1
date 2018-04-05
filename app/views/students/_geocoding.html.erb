@@ -1,0 +1,71 @@
+<!-- esto es geocoding -->
+
+<div id="demo">
+</div>
+
+
+<script>
+var x = $('#demo');
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(getAddress);
+} else {
+  x.innerHTML = "Geolocation is not supported by this browser.";
+}
+function getAddress(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  $.ajax({
+    url: '<%= tutor_students_path(current_user) %>',
+    type: 'GET',
+    dataType: 'json',
+    data: {latitude: latitude, longitude: longitude}
+  })
+  .done(function(data) {
+    x.text(data)
+  });
+};
+</script>
+
+<div class="container">
+  <div id="demo"> </div> <button onclick="getLocation()">Try It</button>
+  <script type="text/javascript">
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script>
+
+</div>
+
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+
+<script type="text/javascript">
+$(document).on('turbolinks:load', function() {
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    // markers = handler.addMarkers([
+    //   {
+    //     "lat": -33.4391673,
+    //     "lng": -70.6182992
+    //   }
+    // ]);
+     markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+});
+</script>

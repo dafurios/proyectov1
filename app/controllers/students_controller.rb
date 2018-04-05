@@ -11,7 +11,42 @@ class StudentsController < ApplicationController
     @students = @tutor.students
 
     # @students = Student.all
+
+    # geolocation #####
+
+    if user_signed_in?
+      @students = Student.near(
+        current_user.address,
+        0_300,
+        units: :km
+      )
+    else
+      @students = @tutor.students
+      # @students = Student.all
+    end
+
+    @students = @tutor.students
+    # @students = Student.all
+    @hash = Gmaps4rails.build_markers(@students) do |student, marker|
+      marker.lat student.latitude
+      marker.lng student.longitude
+
+    end
   end
+
+  def get_location
+  end
+
+  def find_address
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+
+    address = Geocoder.address([latitude, longitude])
+
+    render json: address.to_json
+  end
+
+  #############################
 
   # GET /students/1
   # GET /students/1.json
@@ -79,8 +114,6 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  
 
   private
   # Use callbacks to share common setup or constraints between actions.

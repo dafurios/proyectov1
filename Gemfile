@@ -38,6 +38,10 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+# omniauth
+
+gem 'omniauth-facebook'
+
 
 
 

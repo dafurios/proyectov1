@@ -56,27 +56,4 @@
 
 <%= link_to 'New Student', new_tutor_student_path %>
 
-
-<div class="container">
-  <div id="demo"> </div> <button onclick="getLocation()">Try It</button>
-  <script type="text/javascript">
-  var x = document.getElementById("demo");
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-  }
-  </script>
-
-</div>
-
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
+<%= render 'students/geocoding' %>
