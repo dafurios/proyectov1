@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'cars/index'
-
-  get 'cars/edit'
-
-  get 'cars/new'
-
-  get 'cars/show'
-
-  get 'cars/_form'
-
-  get 'cars/_index'
-
   resources :coordinators, only: [:index, :show, :edit, :update]
 
   resources :enterprises, only: [:index, :show, :edit, :update] do
@@ -22,14 +10,17 @@ Rails.application.routes.draw do
 
 
   resources :tutors, only: [:index, :show, :edit, :update] do
+    # get 'students/get_location'
     resources :students do
       resources :trips, only: :index
     end
   end
 
-
-
   root 'homes#index'
+
+  get 'students/get_location'
+
+  get 'students/coord_logic'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

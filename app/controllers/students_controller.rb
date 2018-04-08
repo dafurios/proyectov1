@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :move_point, only: [:coord_logic]
+
 
 
   # GET /students
@@ -14,37 +16,95 @@ class StudentsController < ApplicationController
 
     # geolocation #####
 
-    if user_signed_in?
-      @students = Student.near(
-        current_user.address,
-        0_300,
-        units: :km
-      )
-    else
-      @students = @tutor.students
-      # @students = Student.all
-    end
+    # if user_signed_in?
+    #   @students = Student.near(
+    #     current_user.address,
+    #     0_3,
+    #     units: :km
+    #   )
+    # else
+    #   @students = @tutor.students
+    #   # @students = Student.all
+    # end
 
     @students = @tutor.students
     # @students = Student.all
     @hash = Gmaps4rails.build_markers(@students) do |student, marker|
       marker.lat student.latitude
       marker.lng student.longitude
-
     end
   end
 
+  def coord_logic
+
+    Point.all.each do |point|
+    point.latitude
+    point.longitude
+    point.save
+  end
+
+  end
+
+  # 10.times do
+  #   Student.all
+  #    Student.all.each do |student|
+  #      student.latitude += 1
+  #    student.longitude += 1
+  #   student.save
+  #    end
+  #  sleep 10
+  # end
+
+
+  def move_point
+
+    # student1 = Student.first
+    # # 10.times do
+    # student1.latitude += 0.005
+    # student1.longitude += 0.005
+    # student1.save!
+    # #   sleep 1
+    # # end
+    #
+    # student2 = Student.second
+    # student2.latitude += 0.005
+    # student2.longitude += 0.005
+    # student2.save!
+
+    point = Point.all
+
+    Point.all.each do |point|
+    point.latitude += 0.0005
+    point.longitude += 0.0005
+    point.save
+  end
+
+
+
+
+  end
+
+
+
   def get_location
+    # @tutor = current_user
+    # @students = @tutor.students
+    @points = Point.all
+    @hash = Gmaps4rails.build_markers(@points) do |point, marker|
+      marker.lat point.latitude
+      marker.lng point.longitude
+    end
+
   end
 
-  def find_address
-    latitude = params[:latitude]
-    longitude = params[:longitude]
-
-    address = Geocoder.address([latitude, longitude])
-
-    render json: address.to_json
-  end
+  # def find_address
+  #   latitude = params[:latitude]
+  #   longitude = params[:longitude]
+  #
+  #   address = Geocoder.address([latitude, longitude])
+  #
+  #   render json: address.to_json
+  # end
 
   #############################
 

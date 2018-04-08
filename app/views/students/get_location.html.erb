@@ -1,0 +1,48 @@
+<h1>Demo Track</h1>
+
+<div class="container">
+
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
+</div>
+
+<div id="track-map">
+sadasd
+</div>
+
+<script type="text/javascript">
+$(document).on('turbolinks:load', function() {
+  handler = Gmaps.build('Google');
+  handler.buildMap({
+    provider: {
+      center: new google.maps.LatLng({lat: -33.41, lng: -70.56}),
+      zoom: 12
+    },
+    internal: {
+      id: 'map'
+    }
+  },
+  function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var studentMap = setInterval(function () {
+      $.ajax({
+        url: "<%= students_coord_logic_path %>",
+        type:'GET',
+        data: {student:{address: 'zzzzzzzzzzzzzzzzz'}}
+      })
+      .done(function() {
+        console.log("success")
+        clearInterval (studentMap);
+      })
+    }, 1000);
+  });
+
+</script>

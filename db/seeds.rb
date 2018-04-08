@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 #
+
+Point.create([latitude: -33.4266601, longitude: -70.6692655])
+Point.create([latitude: -33.4273994, longitude: -70.5708064])
+Point.create([latitude: -33.5137769, longitude: -70.6033637])
+Point.create([latitude: -33.5006623, longitude: -70.7156962])
+Point.create([latitude: -33.3734428, longitude: -70.5180928])
+
 #
 # c = Country.find_or_create_by(name: 'Chile')
 #
