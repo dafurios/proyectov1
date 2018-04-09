@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+#<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Image:</strong>
@@ -20,10 +20,10 @@
   <%= @tutor.lastname %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Surname:</strong>
-  <%= @tutor.surname %>
-</p>
+  <%#= @tutor.surname %>
+</p> -->
 
 <p>
   <strong>Address:</strong>
@@ -35,45 +35,45 @@
   <%= @tutor.commune.name %>
 </p>
 
-<p>
+<!-- <p>
   <strong>State:</strong>
-  <%= @tutor.state %>
+  <%#= @tutor.state %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @tutor.city %>
+  <%#= @tutor.city %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @tutor.country %>
-</p>
+  <%#= @tutor.country %>
+</p> -->
 
 <p>
   <strong>Phone:</strong>
   <%= @tutor.phone %>
 </p>
 
-<p>
+<!-- <p>
   <strong>School:</strong>
-  <%= @tutor.school %>
+  <%#= @tutor.school %>
 </p>
 
 <p>
   <strong>Level:</strong>
-  <%= @tutor.level %>
+  <%#= @tutor.level %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @tutor.course %>
+  <%#= @tutor.course %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @tutor.name %>
-</p>
+  <%#= @tutor.name %>
+</p> -->
 
 <%= link_to 'Edit', edit_tutor_path(current_user) %> |
 <%= link_to 'Back', tutor_students_path(current_user) %>

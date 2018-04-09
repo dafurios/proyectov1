@@ -1,10 +1,10 @@
 <!-- esto es geocoding -->
 
-<div id="demo">
-</div>
+<!-- <div id="demo">
+</div> -->
 
 
-<script>
+<!-- <script>
 var x = $('#demo');
 
 if (navigator.geolocation) {
@@ -25,30 +25,41 @@ function getAddress(position) {
     x.text(data)
   });
 };
-</script>
+</script> -->
 
 <div class="container">
-  <div id="demo"> </div> <button onclick="getLocation()">Try It</button>
-  <script type="text/javascript">
-  var x = document.getElementById("demo");
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-  }
-  </script>
+  <%= link_to 'Track Map', students_get_location_path , class: 'btn btn-xs btn-info'%>
 
+</div>
+<!-- <div class="container">
+  <div id="demo"> </div> <button onclick="getLocation()">Try It</button>
 </div>
 
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<script type="text/javascript">
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script> -->
+
+
+<div class="container">
+  <div class="center-block" align="center">
+    <div style='width: 800px;'>
+      <div id="map" style='width: 800px; height: 400px;'></div>
+    </div>
+
+  </div>
+
 </div>
 
 

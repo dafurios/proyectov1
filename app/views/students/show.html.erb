@@ -19,36 +19,36 @@
   <strong>Lastname:</strong>
   <%= @student.lastname %>
 </p>
-
+<!--
 <p>
   <strong>Surname:</strong>
-  <%= @student.surname %>
-</p>
+  <%#= @student.surname %>
+</p> -->
 
 <p>
   <strong>Address:</strong>
   <%= @student.address %>
 </p>
-
+<!--
 <p>
   <strong>Commune:</strong>
-  <%= @student.commune.name %>
+  <%#= @student.commune.name %>
 </p>
 
 <p>
   <strong>State:</strong>
-  <%= @student.state %>
+  <%#= @student.state %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @student.city %>
+  <%#= @student.city %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @student.country %>
-</p>
+  <%#= @student.country %>
+</p> -->
 
 <p>
   <strong>Phone:</strong>
@@ -70,10 +70,10 @@
   <%= @student.course %>
 </p>
 
-<p>
+<!-- <p>
   <strong>User:</strong>
-  <%= @student.student_id %>
-</p>
+  <%#= @student.student_id %>
+</p> -->
 
 <%= link_to 'Edit', edit_tutor_student_path(@student) %> |
 <%= link_to 'Back', tutor_students_path(current_user) %>

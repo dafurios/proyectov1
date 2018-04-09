@@ -1,48 +1,76 @@
-<h1>Mi Datos de Tutor</h1>
+<div class="container" id="tutor-data">
+  <h1>Mi Datos de Tutor</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Foto</th>
-      <th>Rut</th>
-      <th>Nombre</th>
-      <th>Apellido Paterno</th>
-      <th>Apellido Materno</th>
-      <th>Dirección</th>
-      <th>Comuna</th>
-      <th>Teléfono</th>
-      <th>coordinador</th>
-      <th>Nivel</th>
-      <th>Curso</th>
-      <th>Nombre Apoderado</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <table>
+    <thead>
       <tr>
-        <td><%= image_tag @tutor.image.thumb %></td>
-        <td><%= @tutor.rut %></td>
-        <td><%= @tutor.name %></td>
-        <td><%= @tutor.lastname %></td>
-        <td><%= @tutor.surname %></td>
-        <td><%= @tutor.address %></td>
-        <% if @tutor.commune == nil %>
-          <td> Ingresa Comuna</td>
-          <% else %>
-          <td><%= @tutor.commune.name %></td>
-        <% end %>
-
-        <td><%= @tutor.phone %></td>
-        <td><%= @tutor.school %></td>
-        <td><%= @tutor.level %></td>
-        <td><%= @tutor.course %></td>
-        <td><%= @tutor.name %></td>
-        <td><%= link_to 'Show', tutor_path(current_user) %></td>
-        <td><%= link_to 'Editar', edit_tutor_path(current_user) %></td>
+        <th>Foto</th>
+        <th>Rut</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <!-- <th>Apellido Materno</th> -->
+        <th>Address</th>
+        <th>Comuna</th>
+        <th>Teléfono</th>
+        <!-- <th>Colegio</th> -->
+        <!-- <th>coordinador</th> -->
+        <!-- <th>Nivel</th>
+        <th>Curso</th> -->
+        <!-- <th>User ID</th> -->
+        <th colspan="3"></th>
       </tr>
+    </thead>
 
-  </tbody>
-</table>
+    <tbody>
+        <tr>
+          <td><%= image_tag @tutor.image.thumb %></td>
+          <td><%= @tutor.rut %></td>
+          <td><%= @tutor.name %></td>
+          <td><%= @tutor.lastname %></td>
+          <td><%= @tutor.surname %></td>
+          <td><%= @tutor.address %></td>
+          <% if @tutor.commune == nil %>
+            <td> Ingresa Comuna</td>
+            <% else %>
+            <td><%= @tutor.commune.name %></td>
+          <% end %>
 
+          <td><%= @tutor.phone %></td>
+          <!-- <td><%#= @tutor.school %></td>
+          <td><%#= @tutor.level %></td>
+          <td><%#= @tutor.course %></td>
+          <td><%= @tutor.name %></td> -->
+          <td><%= link_to 'Show', tutor_path(current_user) , class: 'btn btn-xs btn-info'%></td>
+          <td><%= link_to 'Edit', edit_tutor_path(current_user), class: 'btn btn-xs btn-warning' %></td>
+        </tr>
+
+    </tbody>
+  </table>
+
+</div>
 <br>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Comentario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="comment_id">
+        <!-- ... -->
+				<!-- Aqui va el formulario -->
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

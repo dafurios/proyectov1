@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="container">
+
+
 <p>
   <strong>Image:</strong>
   <%= image_tag @driver.image.thumb %>
@@ -39,11 +43,11 @@
   <strong>Address:</strong>
   <%= @driver.address %>
 </p>
-
+<!--
 <p>
   <strong>Commune:</strong>
-  <%= @driver.commune %>
-</p>
+  <%#= @driver.commune %>
+</p> -->
 
 <p>
   <strong>State:</strong>
@@ -97,3 +101,10 @@
   <%= link_to 'Edit', edit_enterprise_driver_path(@driver) %> |
   <%= link_to 'Back', enterprise_drivers_path(current_user) %>
 <% end %>
+
+</div>
+
+<div class="container" "jumbotron">
+  <%= link_to 'Track Map', students_get_location_path , class: 'btn btn-xs btn-info'%>
+
+</div>
