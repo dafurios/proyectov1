@@ -22,7 +22,7 @@
     </thead>
 
     <tbody>
-        <tr>
+        <tr id="<%= @tutor.id %>">
           <td><%= image_tag @tutor.image.thumb %></td>
           <td><%= @tutor.rut %></td>
           <td><%= @tutor.name %></td>
@@ -40,8 +40,8 @@
           <td><%#= @tutor.level %></td>
           <td><%#= @tutor.course %></td>
           <td><%= @tutor.name %></td> -->
-          <td><%= link_to 'Show', tutor_path(current_user) , class: 'btn btn-xs btn-info'%></td>
-          <td><%= link_to 'Edit', edit_tutor_path(current_user), class: 'btn btn-xs btn-warning' %></td>
+          <td ><%= link_to 'Show', tutor_path(current_user) , remote: true, class: 'btn btn-xs btn-info'%></td>
+          <td ><%= link_to 'Edit', edit_tutor_path(current_user), remote: true, class: 'btn btn-xs btn-warning' %></td>
         </tr>
 
     </tbody>
@@ -55,7 +55,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Comentario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
